@@ -64,16 +64,18 @@ public class EntityManager
         }
     }
 
-    public void handleClicks(int mouseX, int mouseY, boolean left, boolean right)
+    public boolean handleClicks(int mouseX, int mouseY, boolean left, boolean right)
     {
         for (Entity entity : this.entities) {
             if(entity instanceof IClickableEntity)
             {
                 if(Math.abs(entity.location.getX() - mouseX) < 10 && Math.abs(entity.location.getY() - mouseY) < 10)
                 {
-                    ((IClickableEntity) entity).onClick();
+                    return ((IClickableEntity) entity).onClick();
                 }
             }
         }
+
+        return false;
     }
 }

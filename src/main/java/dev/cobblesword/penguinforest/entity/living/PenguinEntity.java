@@ -123,8 +123,9 @@ public class PenguinEntity extends LivingEntity implements IClickableEntity
     }
 
     @Override
-    public void onClick()
+    public boolean onClick()
     {
         JOptionPane.showMessageDialog(null, "You clicked a penguin");
+        return true;
     }
 }

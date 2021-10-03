@@ -107,9 +107,15 @@ public class PneguinForestClient extends Applet implements Runnable
                 mouseY = ((MouseEvent) e).getY() / scale;
 
                 int button = ((MouseEvent) e).getButton();
-                player.onClicked(mouseX, mouseY, button == MouseEvent.BUTTON1, button == MouseEvent.BUTTON3);
 
-                entityManager.handleClicks(mouseX, mouseY, button == MouseEvent.BUTTON1, button == MouseEvent.BUTTON3);
+                boolean rightClick = button == MouseEvent.BUTTON3;
+                boolean leftClick = button == MouseEvent.BUTTON1;
+
+                boolean success = entityManager.handleClicks(mouseX, mouseY, leftClick, rightClick);
+                if(!success)
+                {
+                    player.onClicked(mouseX, mouseY, leftClick, rightClick);
+                }
         }
     }
 }
