@@ -54,6 +54,7 @@ public class EntityManager
             Iterator<Entity> iterator = this.entities.iterator();
             while (iterator.hasNext()) {
                 Entity entity = iterator.next();
+
                 if(layerIndex == entity.getLayer())
                 {
                     if(entity.isVisible())

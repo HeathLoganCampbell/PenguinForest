@@ -22,6 +22,7 @@ public class SnowballEntity extends ProjectileEntity
         this.targetLocation = targetLocation;
     }
 
+    // Turns out they should be queued before adding :) because input is on it's own thread
     @Override
     public void spawn(double posX, double posY) {
         super.spawn(posX, posY);
