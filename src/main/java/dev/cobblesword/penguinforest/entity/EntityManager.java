@@ -1,6 +1,7 @@
 package dev.cobblesword.penguinforest.entity;
 
 import dev.cobblesword.penguinforest.entity.behaviour.IClickableEntity;
+import dev.cobblesword.penguinforest.entity.behaviour.IHoverableEntity;
 import dev.cobblesword.penguinforest.fx.Bitmap;
 
 import java.util.ArrayList;
@@ -77,5 +78,20 @@ public class EntityManager
         }
 
         return false;
+    }
+
+    public boolean handleHover(int mouseX, int mouseY)
+    {
+        for (Entity entity : this.entities) {
+            if(entity instanceof IHoverableEntity)
+            {
+                if(Math.abs(entity.location.getX() - mouseX) < 10 && Math.abs(entity.location.getY() - mouseY) < 10)
+                {
+                    return ((IHoverableEntity) entity).onHover();
+                }
+            }
+        }
+
+        return true;
     }
 }

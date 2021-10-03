@@ -90,6 +90,14 @@ public class PneguinForestClient extends Applet implements Runnable
         }
     }
 
+    private void updateMousePosition(MouseEvent e)
+    {
+        lastMouseX = mouseX;
+        lastMouseY = mouseY;
+        mouseX = e.getX() / scale;
+        mouseY = e.getY() / scale;
+    }
+
     public void processEvent(AWTEvent e)
     {
         switch (e.getID())
@@ -99,12 +107,14 @@ public class PneguinForestClient extends Applet implements Runnable
 //                k[((KeyEvent) e).getKeyCode()] = down;
                 break;
 //            case MouseEvent.MOUSE_PRESSED:
+            case MouseEvent.MOUSE_MOVED:
+                updateMousePosition((MouseEvent) e);
+
+                boolean success = entityManager.handleHover(mouseX, mouseY);
+                break;
             case MouseEvent.MOUSE_RELEASED:
             case MouseEvent.MOUSE_DRAGGED:
-                lastMouseX = mouseX;
-                lastMouseY = mouseY;
-                mouseX = ((MouseEvent) e).getX() / scale;
-                mouseY = ((MouseEvent) e).getY() / scale;
+                updateMousePosition((MouseEvent) e);
 
                 int button = ((MouseEvent) e).getButton();
 
