@@ -15,7 +15,7 @@ import java.awt.image.DataBufferInt;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class PneguinForestClient extends Applet implements Runnable
+public class PenguinForestClient extends Applet implements Runnable
 {
     private int width, height, scale;
     private int mouseX, mouseY;
@@ -25,7 +25,7 @@ public class PneguinForestClient extends Applet implements Runnable
 
     public static EntityManager entityManager;
 
-    public PneguinForestClient(int width, int height, int scale)
+    public PenguinForestClient(int width, int height, int scale)
     {
         this.width = width;
         this.height = height;
@@ -33,7 +33,7 @@ public class PneguinForestClient extends Applet implements Runnable
 
         setSize(width * scale, height * scale);
 
-        this.entityManager = new EntityManager();
+        entityManager = new EntityManager();
     }
 
     @Override
@@ -67,15 +67,15 @@ public class PneguinForestClient extends Applet implements Runnable
 
         player.spawn(spawnX, spawnY);
 
-        this.entityManager.registerEntity(this.player);
+        entityManager.registerEntity(this.player);
 
         while(true)
         {
-            this.entityManager.update(tick);
+            entityManager.update(tick);
 
             screen.draw(Asset.DESERT, 0, 0);
 
-            this.entityManager.render(screen);
+            entityManager.render(screen);
 
             sg.drawImage(image, 0, 0, width * scale, height * scale, 0, 0, width, height, null);
             do

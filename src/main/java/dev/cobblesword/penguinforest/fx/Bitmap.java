@@ -1,6 +1,5 @@
 package dev.cobblesword.penguinforest.fx;
 
-
 public class Bitmap
 {
 	public static final int TRANSPARENT_COLOR = 0xFC00FC;
