@@ -14,10 +14,13 @@ public class Main
     public static final int SCALE = 2;
     public static final String TITLE = "Penguin Forest";
 
-    public static void main(String[] av) {
+    public static void main(String[] av)
+    {
         JFrame frame = new JFrame(TITLE);
-        frame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
+        frame.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e)
+            {
                 frame.setVisible(false);
                 frame.dispose();
                 System.exit(0);

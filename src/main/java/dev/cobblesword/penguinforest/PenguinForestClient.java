@@ -3,7 +3,6 @@ package dev.cobblesword.penguinforest;
 import dev.cobblesword.penguinforest.assets.Asset;
 import dev.cobblesword.penguinforest.entity.EntityManager;
 import dev.cobblesword.penguinforest.entity.living.PenguinEntity;
-import dev.cobblesword.penguinforest.entity.projectile.SnowballEntity;
 import dev.cobblesword.penguinforest.fx.Bitmap;
 
 import java.applet.Applet;
@@ -12,7 +11,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class PenguinForestClient extends Applet implements Runnable
@@ -37,7 +35,8 @@ public class PenguinForestClient extends Applet implements Runnable
     }
 
     @Override
-    public void start() {
+    public void start()
+    {
         super.start();
 
         enableEvents(AWTEvent.KEY_EVENT_MASK | AWTEvent.MOUSE_EVENT_MASK | AWTEvent.MOUSE_MOTION_EVENT_MASK);
