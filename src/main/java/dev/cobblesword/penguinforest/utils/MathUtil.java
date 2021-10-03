@@ -12,4 +12,12 @@ public class MathUtil
     {
         return c * t / d + b;
     }
+
+    public static double easeOutQuad(float t, double b, double c, double d) {
+        return -c * (t /= d) * (t - 2) + b;
+    }
+
+    public static double easeInQuad(float t, double b, double c, double d) {
+        return c * (t /= d) * t + b;
+    }
 }

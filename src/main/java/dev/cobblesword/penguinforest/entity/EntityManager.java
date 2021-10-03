@@ -50,11 +50,15 @@ public class EntityManager
     {
         for (int layerIndex = 0; layerIndex < 10; layerIndex++)
         {
-            for (Entity entity : this.entities)
-            {
+            Iterator<Entity> iterator = this.entities.iterator();
+            while (iterator.hasNext()) {
+                Entity entity = iterator.next();
                 if(layerIndex == entity.getLayer())
                 {
-                    entity.render(screen);
+                    if(entity.isVisible())
+                    {
+                        entity.render(screen);
+                    }
                 }
             }
         }

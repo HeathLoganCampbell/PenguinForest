@@ -12,6 +12,7 @@ public abstract class Entity
     protected Location location, lastLocation;
     protected long livingTicks = 0;
     private int layer = 5;
+    protected boolean visible = true;
 
     public Entity()
     {
@@ -57,5 +58,10 @@ public abstract class Entity
     protected void setLayer(int layer)
     {
         this.layer = layer;
+    }
+
+    public boolean isVisible()
+    {
+        return visible;
     }
 }
