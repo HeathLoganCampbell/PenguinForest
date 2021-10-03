@@ -1,5 +1,6 @@
 package dev.cobblesword.penguinforest.entity;
 
+import dev.cobblesword.penguinforest.entity.behaviour.IClickableEntity;
 import dev.cobblesword.penguinforest.fx.Bitmap;
 
 import java.util.ArrayList;
@@ -54,6 +55,19 @@ public class EntityManager
                 if(layerIndex == entity.getLayer())
                 {
                     entity.render(screen);
+                }
+            }
+        }
+    }
+
+    public void handleClicks(int mouseX, int mouseY, boolean left, boolean right)
+    {
+        for (Entity entity : this.entities) {
+            if(entity instanceof IClickableEntity)
+            {
+                if(Math.abs(entity.location.getX() - mouseX) < 10 && Math.abs(entity.location.getY() - mouseY) < 10)
+                {
+                    ((IClickableEntity) entity).onClick();
                 }
             }
         }

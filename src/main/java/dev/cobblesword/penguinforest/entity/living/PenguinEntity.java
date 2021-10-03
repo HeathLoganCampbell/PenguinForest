@@ -3,12 +3,15 @@ package dev.cobblesword.penguinforest.entity.living;
 import dev.cobblesword.penguinforest.Main;
 import dev.cobblesword.penguinforest.PneguinForestClient;
 import dev.cobblesword.penguinforest.assets.Asset;
+import dev.cobblesword.penguinforest.entity.behaviour.IClickableEntity;
 import dev.cobblesword.penguinforest.entity.projectile.SnowballEntity;
 import dev.cobblesword.penguinforest.fx.Bitmap;
 import dev.cobblesword.penguinforest.utils.Location;
 import dev.cobblesword.penguinforest.utils.MathUtil;
 
-public class PenguinEntity extends LivingEntity
+import javax.swing.*;
+
+public class PenguinEntity extends LivingEntity implements IClickableEntity
 {
     protected Location targetLocation;
     protected int animationFrame = 0;
@@ -117,5 +120,11 @@ public class PenguinEntity extends LivingEntity
             snowball.spawn(location.getX(), location.getY());
             PneguinForestClient.entityManager.registerEntity(snowball);
         }
+    }
+
+    @Override
+    public void onClick()
+    {
+        JOptionPane.showMessageDialog(null, "You clicked a penguin");
     }
 }

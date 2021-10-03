@@ -98,9 +98,8 @@ public class PneguinForestClient extends Applet implements Runnable
             case KeyEvent.KEY_RELEASED:
 //                k[((KeyEvent) e).getKeyCode()] = down;
                 break;
-            case MouseEvent.MOUSE_PRESSED:
-//            case MouseEvent.MOUSE_RELEASED:
-//            case MouseEvent.MOUSE_MOVED:
+//            case MouseEvent.MOUSE_PRESSED:
+            case MouseEvent.MOUSE_RELEASED:
             case MouseEvent.MOUSE_DRAGGED:
                 lastMouseX = mouseX;
                 lastMouseY = mouseY;
@@ -109,6 +108,8 @@ public class PneguinForestClient extends Applet implements Runnable
 
                 int button = ((MouseEvent) e).getButton();
                 player.onClicked(mouseX, mouseY, button == MouseEvent.BUTTON1, button == MouseEvent.BUTTON3);
+
+                entityManager.handleClicks(mouseX, mouseY, button == MouseEvent.BUTTON1, button == MouseEvent.BUTTON3);
         }
     }
 }
