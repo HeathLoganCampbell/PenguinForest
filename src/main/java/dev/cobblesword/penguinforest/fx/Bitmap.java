@@ -20,11 +20,13 @@ public class Bitmap
 	
 	public void draw(Bitmap bitmap, int xOffset, int yOffset)
 	{
-		for (int y = 0; y < bitmap.height; y++) {
+		for (int y = 0; y < bitmap.height; y++)
+		{
 			int yPix = y + yOffset;
 			if (yPix < 0 || yPix >= height) continue;
 
-			for (int x = 0; x < bitmap.width; x++) {
+			for (int x = 0; x < bitmap.width; x++)
+			{
 				int xPix = x + xOffset;
 				if (xPix < 0 || xPix >= width) continue;
 
@@ -42,11 +44,13 @@ public class Bitmap
 
 	public void drawSegment(Bitmap childBitmap, int innerX, int innerY, int innerWidth, int innerHeight, int xOffset, int yOffset, int color)
 	{
-		for (int y = innerY; y < innerY + innerHeight; y++) {
+		for (int y = innerY; y < innerY + innerHeight; y++)
+		{
 			int yPix = y + yOffset - innerY;
 			if (yPix < 0 || yPix >= height) continue;
 
-			for (int x = innerX; x < innerX + innerWidth; x++) {
+			for (int x = innerX; x < innerX + innerWidth; x++)
+			{
 				int xPix = x + xOffset - innerX;
 				if (xPix < 0 || xPix >= width) continue;
 

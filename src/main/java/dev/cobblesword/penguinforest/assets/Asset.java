@@ -16,18 +16,24 @@ public class Asset
     public static Bitmap PENGUIN = loadBitmap("entities/penguin/spritesheet.png", true);
     public static Bitmap SNOWBALL = loadBitmap("entities/projectile/snowball/spritesheet.png");
 
-    public static Bitmap loadBitmap(String file) {
+    public static Bitmap loadBitmap(String file)
+    {
         return loadBitmap(file, false);
     }
 
-    public static Bitmap loadBitmap(String file, boolean transparent) {
+    public static Bitmap loadBitmap(String file, boolean transparent)
+    {
         InputStream stream = Asset.class.getClassLoader().getResourceAsStream(file);
         BufferedImage image = null;
-        try {
+        try
+            {
+            assert stream != null;
             image = ImageIO.read(stream);
-        } catch (IOException e) {
+        } catch (IOException e)
+            {
             e.printStackTrace();
-        }
+            }
+        assert image != null;
         int width = image.getWidth();
         int height = image.getHeight();
         Bitmap bitmap = new Bitmap(width, height);

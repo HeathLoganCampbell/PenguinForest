@@ -19,7 +19,8 @@ public class PenguinEntity extends LivingEntity implements IClickableEntity
     private Location originalWaddlingLocation;
     private float waddleCounter = 0.0f;
 
-    public PenguinEntity() {
+    public PenguinEntity()
+    {
         super();
     }
 
