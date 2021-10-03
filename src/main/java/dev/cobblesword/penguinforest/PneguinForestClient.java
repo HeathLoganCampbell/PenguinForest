@@ -110,7 +110,7 @@ public class PneguinForestClient extends Applet implements Runnable
             case MouseEvent.MOUSE_MOVED:
                 updateMousePosition((MouseEvent) e);
 
-                boolean success = entityManager.handleHover(mouseX, mouseY);
+                entityManager.handleHover(mouseX, mouseY);
                 break;
             case MouseEvent.MOUSE_RELEASED:
             case MouseEvent.MOUSE_DRAGGED:
