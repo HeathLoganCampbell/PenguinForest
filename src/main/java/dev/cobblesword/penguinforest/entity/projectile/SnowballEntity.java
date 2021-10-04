@@ -24,7 +24,8 @@ public class SnowballEntity extends ProjectileEntity
 
     // Turns out they should be queued before adding :) because input is on it's own thread
     @Override
-    public void spawn(double posX, double posY) {
+    public void spawn(double posX, double posY)
+    {
         super.spawn(posX, posY);
 
         this.startLocation = new Location(posX, posY);
@@ -32,10 +33,12 @@ public class SnowballEntity extends ProjectileEntity
     }
 
     @Override
-    public void update(int tick) {
+    public void update(int tick)
+    {
         super.update(tick);
 
-        if (livingTicks > 30 * 20) {
+        if (livingTicks > 30 * 20)
+        {
             this.removed = true;
             return;
         }
@@ -71,14 +74,7 @@ public class SnowballEntity extends ProjectileEntity
                     halfTime);
         }
 
-        if (snowballY >= 0)
-        {
-            this.visible = false;
-        }
-        else
-        {
-            this.visible = true;
-        }
+        this.visible = ! (snowballY >= 0);
 
         this.location.setX(x);
         this.location.setY(y + snowballY);

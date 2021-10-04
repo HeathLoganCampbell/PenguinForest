@@ -16,7 +16,7 @@ import java.util.Map;
 public class AppletAdapter extends Panel implements AppletStub, AppletContext 
 {
 	private static final long serialVersionUID = 1L;
-	private Label status = null;
+	private Label status;
 	private Map<String, InputStream> streamMap = new HashMap<>();
 	
 	public AppletAdapter()
@@ -47,16 +47,14 @@ public class AppletAdapter extends Panel implements AppletStub, AppletContext
 	
 	public String getParameter(String name)
 	{
-	  String value = null;
-	  return value;
+		return null;
 	}
 	
-	public boolean isActive() {
+	public boolean isActive()
+	{
 	  return true;
 	}
-	
-	
-	
+
 	public Applet getApplet(String an)
 	{
 	  return null;
@@ -100,16 +98,18 @@ public class AppletAdapter extends Panel implements AppletStub, AppletContext
 	  status.setText(msg);
 	}
 	
-	public void setStream(String key, InputStream stream) throws IOException
+	public void setStream(String key, InputStream stream)
 	{
 		streamMap.put(key, stream);
 	}
 	
-	public InputStream getStream(String key) {
-	  return (InputStream) streamMap.get(key);
+	public InputStream getStream(String key)
+	{
+	  return streamMap.get(key);
 	}
 	
-	public Iterator<String> getStreamKeys() {
+	public Iterator<String> getStreamKeys()
+	{
 	  return streamMap.keySet().iterator();
 	}
 }

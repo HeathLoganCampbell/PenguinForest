@@ -12,10 +12,7 @@ public class EntityManager
 {
     private List<Entity> entities = new ArrayList<>();
 
-    public EntityManager()
-    {
-
-    }
+    public EntityManager() {}
 
     public void registerEntity(Entity entity)
     {
@@ -35,7 +32,8 @@ public class EntityManager
     public void update(int tick)
     {
         Iterator<Entity> iterator = this.entities.iterator();
-        while (iterator.hasNext()) {
+        while (iterator.hasNext())
+        {
             Entity entity = iterator.next();
             if(entity.removed)
             {
@@ -51,24 +49,23 @@ public class EntityManager
     {
         for (int layerIndex = 0; layerIndex < 10; layerIndex++)
         {
-            Iterator<Entity> iterator = this.entities.iterator();
-            while (iterator.hasNext()) {
-                Entity entity = iterator.next();
-
-                if(layerIndex == entity.getLayer())
+            for (Entity entity : this.entities)
                 {
-                    if(entity.isVisible())
-                    {
-                        entity.render(screen);
-                    }
+                    if (layerIndex == entity.getLayer())
+                        {
+                            if (entity.isVisible())
+                                {
+                                    entity.render(screen);
+                                }
+                        }
                 }
-            }
         }
     }
 
     public boolean handleClicks(int mouseX, int mouseY, boolean left, boolean right)
     {
-        for (Entity entity : this.entities) {
+        for (Entity entity : this.entities)
+        {
             if(entity instanceof IClickableEntity)
             {
                 if(Math.abs(entity.location.getX() - mouseX) < 10 && Math.abs(entity.location.getY() - mouseY) < 10)

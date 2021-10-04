@@ -5,5 +5,5 @@ import dev.cobblesword.penguinforest.utils.ClickType;
 
 public interface Clickable
 {
-    public void onClick(Entity entity, ClickType clickType, int mouseX, int mouseY);
+    void onClick(Entity entity, ClickType clickType, int mouseX, int mouseY);
 }

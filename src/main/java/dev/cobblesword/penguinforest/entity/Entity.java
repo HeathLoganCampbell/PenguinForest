@@ -1,9 +1,7 @@
 package dev.cobblesword.penguinforest.entity;
 
 import dev.cobblesword.penguinforest.fx.Bitmap;
-import dev.cobblesword.penguinforest.fx.Render;
 import dev.cobblesword.penguinforest.utils.Location;
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 public abstract class Entity
 {
@@ -14,9 +12,7 @@ public abstract class Entity
     private int layer = 5;
     protected boolean visible = true;
 
-    public Entity()
-    {
-    }
+    public Entity() {}
 
     public void spawn(double posX, double posY)
     {

@@ -2,7 +2,7 @@ package dev.cobblesword.penguinforest.utils.sensors;
 
 import dev.cobblesword.penguinforest.entity.projectile.ProjectileEntity;
 
-public interface Hitable
+public interface Hittable
 {
-    public void onHit(ProjectileEntity projectile);
+    void onHit(ProjectileEntity projectile);
 }

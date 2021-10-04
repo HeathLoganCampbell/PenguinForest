@@ -1,7 +1,7 @@
 package dev.cobblesword.penguinforest.entity.living;
 
 import dev.cobblesword.penguinforest.Main;
-import dev.cobblesword.penguinforest.PneguinForestClient;
+import dev.cobblesword.penguinforest.PenguinForestClient;
 import dev.cobblesword.penguinforest.assets.Asset;
 import dev.cobblesword.penguinforest.entity.behaviour.IClickableEntity;
 import dev.cobblesword.penguinforest.entity.projectile.SnowballEntity;
@@ -19,7 +19,8 @@ public class PenguinEntity extends LivingEntity implements IClickableEntity
     private Location originalWaddlingLocation;
     private float waddleCounter = 0.0f;
 
-    public PenguinEntity() {
+    public PenguinEntity()
+    {
         super();
     }
 
@@ -118,7 +119,7 @@ public class PenguinEntity extends LivingEntity implements IClickableEntity
         {
             SnowballEntity snowball = new SnowballEntity(new Location(mouseX, mouseY));
             snowball.spawn(location.getX(), location.getY());
-            PneguinForestClient.entityManager.registerEntity(snowball);
+            PenguinForestClient.entityManager.registerEntity(snowball);
         }
     }
 

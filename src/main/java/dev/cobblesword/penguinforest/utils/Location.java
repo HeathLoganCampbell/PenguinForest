@@ -10,19 +10,23 @@ public class Location
         this.y = y;
     }
 
-    public double getX() {
+    public double getX()
+    {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(double x)
+    {
         this.x = x;
     }
 
-    public double getY() {
+    public double getY()
+    {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(double y)
+    {
         this.y = y;
     }
 
@@ -42,7 +46,7 @@ public class Location
         return (location.y - this.y);
     }
 
-    public double distanceSqured(Location location)
+    public double distanceSquared(Location location)
     {
         double x = this.distanceX(location);
         double y = this.distanceY(location);
@@ -52,11 +56,20 @@ public class Location
 
     public double distance(Location location)
     {
-       return Math.sqrt(this.distanceSqured(location));
+       return Math.sqrt(this.distanceSquared(location));
     }
 
+    @Override
     public Location clone()
     {
+        try
+            {
+                super.clone();
+            }
+        catch (CloneNotSupportedException ex)
+            {
+                throw new RuntimeException("Superclass messed up", ex);
+            }
         return new Location(this.x, this.y);
     }
 }

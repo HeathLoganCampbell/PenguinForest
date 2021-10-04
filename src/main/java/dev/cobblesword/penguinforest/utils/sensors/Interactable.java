@@ -4,5 +4,5 @@ import dev.cobblesword.penguinforest.entity.Entity;
 
 public interface Interactable
 {
-    public void onStand(Entity entityStandingOn);
+    void onStand(Entity entityStandingOn);
 }
